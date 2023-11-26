@@ -6,8 +6,9 @@
 # include "../mlx/mlx.h"
 # include "keycodes.h"
 
-# define WIDTH 800
-# define HEIGHT 600
+
+# define WIDTH 1200
+# define HEIGHT 740
 # define CELL_WIDTH 20
 # define CELL_HEIGHT 20
 # define DEAD '0'

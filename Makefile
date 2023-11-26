@@ -13,17 +13,20 @@ OBJ			=		$(SRC_DIR:.c=.o)
 
 all: $(NAME)
 
+.c.o:		%.o : %.c
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
 $(NAME): $(OBJ)
 	@make -C ./mlx
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(MLX) -framework OpenGL -framework AppKit
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(MLX) -framework OpenGL -framework AppKit
 
 clean:
 	@make clean -C ./mlx
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
 	@make clean -C ./mlx
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

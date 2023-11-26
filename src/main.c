@@ -25,16 +25,10 @@ void	game_init(t_game *game)
 	game->change = 0;
 }
 
-void	leaks(void)
-{
-	system("leaks game_of_life");
-}
-
 int	main(void)
 {
 	t_game	game;
 
-	atexit(leaks);
 	game_init(&game);
 	game_loop(&game);
 	return (EXIT_SUCCESS);

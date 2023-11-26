@@ -29,7 +29,8 @@ t_img	*create_alive_cell(t_game *game)
 	for (int i = 0; i < CELL_WIDTH; i++)
 	{
 		for (int j = 0; j < CELL_HEIGHT; j++)
-			alive->addr[j * CELL_WIDTH + i] = 0x00FF0080; // Negro
+			alive->addr[j * CELL_WIDTH + i] = 0x00FFFFFF; // Negro
+			// alive->addr[j * CELL_WIDTH + i] = 0x00FF0080; // ROSA
 	}
 	return (alive);
 }
